@@ -17,26 +17,26 @@ function App() {
   const LoadTodos = async () => {
   console.log("Server Loading...");
 
-  const response = await axios.get(`${BASE_URL}/todos`);
+  const response = await axios.get(`${BASE_URL}todos`);
 
   setTodos(response.data.data);
 }
 
 const AddTodos = async () =>{
-  const response = await axios.post(`${BASE_URL}/todos`, {todoItem: newTodos});
+  const response = await axios.post(`${BASE_URL}todos`, {todoItem: newTodos});
   setNewTodos("");
   LoadTodos();
 };
 
 const UpdateTodo = async () => {
-  const response = await axios.put(`${BASE_URL}/todos`, {oldTodoItem: oldTodo, newTodoItem: newTodos});
+  const response = await axios.put(`${BASE_URL}todos`, {oldTodoItem: oldTodo, newTodoItem: newTodos});
   setEditMode(false);
   setNewTodos("");
   LoadTodos();
 }
 
 const DeleteTodo = async (todoItem) => {
-  const response = await axios.delete(`${BASE_URL}/todos`, {data: {todoItem}});
+  const response = await axios.delete(`${BASE_URL}todos`, {data: {todoItem}});
   LoadTodos();
 };
 
