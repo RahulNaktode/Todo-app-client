@@ -12,7 +12,7 @@ function App() {
   const [editMode, setEditMode] = useState(false);
   const [newTodos, setNewTodos] = useState("");
 
-  const BASE_URL='https://todo-app-server-zw8e.onrender.com';
+  const BASE_URL='https://todo-app-server-zw8e.onrender.com/';
 
   const LoadTodos = async () => {
   console.log("Server Loading...");
